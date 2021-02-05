@@ -1,8 +1,9 @@
 {
-  "version": "0.1.0",
+  "version": "0.5.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "description": "A react component for DHIS2 custom apps which monitors network connection to DHIS2 server",
   "files": [
     "dist",
     "src"
@@ -13,12 +14,13 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
+    "test": "tsdx test --passWithNoTests --watch",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "install:test-tools": "npm install $(npm pack ../test-tools | tail -1) --force"
+    "install:test-tools": "npm install $(npm pack ../test-tools | tail -1) --force",
+    "publish": "npm publish --access=public"
   },
   "peerDependencies": {
     "@testing-library/react": "^11.2.5",
@@ -36,19 +38,9 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "network-check",
-  "author": "Jakub",
+  "name": "@dhis2-app/network-check",
+  "author": "jakub-bao",
   "module": "dist/network-check.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/network-check.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/network-check.esm.js",
-      "limit": "10 KB"
-    }
-  ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.9.2",
     "@types/react": "^17.0.1",
@@ -63,5 +55,9 @@
   },
   "dependencies": {
     "@dhis2-app/test-tools": "file:dhis2-app-test-tools-0.1.0.tgz"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/dhis2-app/network-check.git"
   }
 }
