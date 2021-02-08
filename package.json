@@ -1,5 +1,5 @@
 {
-  "version": "0.5.0",
+  "version": "0.5.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -13,6 +13,8 @@
   },
   "scripts": {
     "start": "tsdx watch",
+    "prebuild": "npm run install:test-tools",
+    "prepack": "npm run install:test-tools",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests --watch",
     "lint": "tsdx lint",
@@ -54,10 +56,10 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@dhis2-app/test-tools": "file:dhis2-app-test-tools-0.1.0.tgz"
+    "@dhis2-app/test-tools": "file:dhis2-app-test-tools-0.1.1.tgz"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/dhis2-app/network-check.git"
+    "type": "git",
+    "url": "https://github.com/dhis2-app/network-check.git"
   }
 }

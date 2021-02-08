@@ -1,3 +1,3 @@
 export function testUrl(url:string){
-    if (!/https:\/\/.+\//.test(url)) throw new Error(`Provided url must be in form 'https://xxx/'\nReceived: ${url}`);
+    if (!/\/$/.test(url)) throw new Error(`Provided url must end with \/'\nReceived: ${url}`);
 }
