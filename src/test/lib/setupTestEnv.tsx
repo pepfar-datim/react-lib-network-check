@@ -12,6 +12,6 @@ export function mockNetworkState(newState:NetworkState){
 
 export function setupTestEnv(){
     render(<SnackbarProvider>
-        <NetworkCheck intervalMs={50} baseUrl={'https://x/'}/>
+        <NetworkCheck intervalMs={50} networkCheckTimeoutS={2} baseUrl={'https://x/'}/>
     </SnackbarProvider>)
 }

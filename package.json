@@ -56,7 +56,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@dhis2-app/test-tools": "file:dhis2-app-test-tools-0.1.1.tgz"
+    "@dhis2-app/test-tools": "file:dhis2-app-test-tools-0.1.4.tgz"
   },
   "repository": {
     "type": "git",
