@@ -11,7 +11,14 @@ interface Props{
     baseUrl: string;
 }
 
-const noNetwork:(netorkState:NetworkState)=>boolean = (networkState:NetworkState)=> [NetworkState.offline,NetworkState.expired].includes(networkState);
+const styles = {
+    newWindowLink: {
+        color: '#fff!important',
+        textDecoration: 'underline'
+    }
+}
+
+const noNetwork:(networkState:NetworkState)=>boolean = (networkState:NetworkState)=> [NetworkState.offline,NetworkState.expired].includes(networkState);
 
 class NetworkCheck extends React.Component<{
     enqueueSnackbar: (message: SnackbarMessage, options?: OptionsObject) => SnackbarKey;
@@ -56,7 +63,7 @@ class NetworkCheck extends React.Component<{
     goOffline = (newState:NetworkState)=>{
         let message;
         if (newState===NetworkState.offline) message = `You're now offline`;
-        else message = `Your DATIM session has expired. Try logging back in other tab.`
+        else message = <span>Your DATIM session has expired.<br/>Try logging back in using a <a style={styles.newWindowLink} href='/dhis-web-commons/security/login.action'>new window</a>.</span>
         this.currentState = {
             networkState: newState,
             dialog:  this.props.enqueueSnackbar(message, {variant:'error', persist: true}),

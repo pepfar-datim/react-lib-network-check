@@ -1,12 +1,13 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Thing } from '../.';
+import NetworkCheck from '../.';
 
 const App = () => {
   return (
     <div>
-      <Thing />
+        Network check demo
+        <NetworkCheck intervalMs={1000} baseUrl={'https://dev-jakub.datim.org/'} networkCheckTimeoutS={60} />
     </div>
   );
 };
