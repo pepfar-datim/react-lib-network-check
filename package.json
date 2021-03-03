@@ -1,5 +1,5 @@
 {
-  "version": "0.5.2",
+  "version": "0.5.5",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -13,16 +13,12 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "prebuild": "npm run install:test-tools",
-    "prepack": "npm run install:test-tools",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests --watch",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "install:test-tools": "npm install $(npm pack ../test-tools | tail -1) --force",
-    "publish": "npm publish --access=public"
   },
   "peerDependencies": {
     "@testing-library/react": "^11.2.5",
