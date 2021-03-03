@@ -4,18 +4,12 @@ import {OptionsObject, SnackbarKey, SnackbarMessage, withSnackbar} from "notista
 import {NetworkState} from "./types/networkState.type";
 import {checkNetwork} from "./services/checkNetwork.service";
 import {testUrl} from "./services/testUrl.service";
+import {expiredMessage} from "./components/expiredMessage";
 
 interface Props{
     intervalMs: number;
     networkCheckTimeoutS: number;
     baseUrl: string;
-}
-
-const styles = {
-    newWindowLink: {
-        color: '#fff!important',
-        textDecoration: 'underline'
-    }
 }
 
 const noNetwork:(networkState:NetworkState)=>boolean = (networkState:NetworkState)=> [NetworkState.offline,NetworkState.expired].includes(networkState);
@@ -63,7 +57,7 @@ class NetworkCheck extends React.Component<{
     goOffline = (newState:NetworkState)=>{
         let message;
         if (newState===NetworkState.offline) message = `You're now offline`;
-        else message = <span>Your DATIM session has expired.<br/>Try logging back in using a <a style={styles.newWindowLink} href='/dhis-web-commons/security/login.action'>new window</a>.</span>
+        else message = expiredMessage
         this.currentState = {
             networkState: newState,
             dialog:  this.props.enqueueSnackbar(message, {variant:'error', persist: true}),
