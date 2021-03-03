@@ -51,7 +51,7 @@ class NetworkCheck extends React.Component<{
         if (this.currentState.networkState===NetworkState.online&&newState===NetworkState.online) return;
         if (this.currentState.networkState===NetworkState.online&&noNetwork(newState)) return this.goOffline(newState);
         if (noNetwork(this.currentState.networkState)&&newState===NetworkState.online) return this.goOnline();
-        if (noNetwork(this.currentState.networkState)&&newState===NetworkState.offline&&this.tooOld(this.currentState.from as Date)) clearInterval(this.interval as NodeJS.Timeout);
+        if (noNetwork(this.currentState.networkState)&&noNetwork(newState)&&this.tooOld(this.currentState.from as Date)) clearInterval(this.interval as NodeJS.Timeout);
     }
 
     goOffline = (newState:NetworkState)=>{

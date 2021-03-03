@@ -17,13 +17,24 @@ async function lastCheckUpdated(updated:boolean):Promise<any>{
     else expect(now).toEqual(previous);
 }
 
-describe('Should timeout',()=>{
-    it('Should timeout',async ()=>{
+describe('Network check should timeout after 5 min',()=>{
+    it('Should timeout when offline',async ()=>{
         await pause(0.2);
         noText(`You're now offline`);
         await lastCheckUpdated(true);
         mockNetworkState(NetworkState.offline);
         await screen.findByText(`You're now offline`);
+        await lastCheckUpdated(true);
+        await pause(2.5);
+        await lastCheckUpdated(false);
+    });
+
+    it('Should timeout on session expire',async ()=>{
+        await pause(0.2);
+        noText(`session has expired`);
+        await lastCheckUpdated(true);
+        mockNetworkState(NetworkState.expired);
+        await screen.findByText(/session has expired/);
         await lastCheckUpdated(true);
         await pause(2.5);
         await lastCheckUpdated(false);

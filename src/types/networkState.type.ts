@@ -1,5 +1,5 @@
 export enum NetworkState{
-  online,
-  offline,
-  expired
+  online='online',
+  offline='offline',
+  expired='expired'
 }

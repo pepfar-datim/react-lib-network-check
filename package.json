@@ -13,12 +13,13 @@
   },
   "scripts": {
     "start": "tsdx watch",
+    "example": "parcel example/public/index.html",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests --watch",
     "lint": "tsdx lint",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "install:test-tools": "npm install $(npm pack ../test-tools | tail -1) --force",
+    "install:test-tools": "npm install $(npm pack ../test-tools | tail -1) --force"
   },
   "peerDependencies": {
     "@testing-library/react": "^11.2.5",
@@ -40,10 +41,15 @@
   "author": "jakub-bao",
   "module": "dist/network-check.esm.js",
   "devDependencies": {
+    "@parcel/optimizer-htmlnano": "^2.0.0-nightly.612",
+    "@parcel/packager-html": "^2.0.0-nightly.612",
+    "@parcel/transformer-html": "^2.0.0-nightly.612",
+    "@parcel/transformer-posthtml": "^2.0.0-nightly.612",
     "@size-limit/preset-small-lib": "^4.9.2",
     "@types/react": "^17.0.1",
     "@types/react-dom": "^17.0.0",
     "husky": "^4.3.8",
+    "parcel": "^2.0.0-beta.1",
     "react": "*",
     "react-dom": "^17.0.1",
     "size-limit": "^4.9.2",
