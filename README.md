@@ -1,4 +1,5 @@
 # DHIS2 Network Check
+**Repo Owner:** Ben Guaraldi [@benguaraldi](https://github.com/benguaraldi)
 
 Minimalistic REACT component to warn user they're offline or their session expired.
 
@@ -47,3 +48,4 @@ And build with:
 ```
 npm build
 ```
+=======
