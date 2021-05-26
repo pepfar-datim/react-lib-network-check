@@ -37,7 +37,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@dhis2-app/network-check",
+  "name": "@pepfar-react-lib/network-check",
   "author": "jakub-bao",
   "module": "dist/network-check.esm.js",
   "devDependencies": {
@@ -62,6 +62,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dhis2-app/network-check.git"
+    "url": "https://github.com/pepfar-datim/react-lib-network-check.git"
   }
 }
