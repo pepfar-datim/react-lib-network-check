@@ -1,0 +1,67 @@
+{
+  "version": "0.5.5",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "description": "A react component for DHIS2 custom apps which monitors network connection to DHIS2 server",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "example": "parcel example/public/index.html",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests --watch",
+    "lint": "tsdx lint",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "install:test-tools": "npm install $(npm pack ../test-tools | tail -1) --force"
+  },
+  "peerDependencies": {
+    "@testing-library/react": "^11.2.5",
+    "notistack": "^1.0.5",
+    "react": "^17.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@pepfar-react-lib/network-check",
+  "author": "jakub-bao",
+  "module": "dist/network-check.esm.js",
+  "devDependencies": {
+    "@parcel/optimizer-htmlnano": "^2.0.0-nightly.612",
+    "@parcel/packager-html": "^2.0.0-nightly.612",
+    "@parcel/transformer-html": "^2.0.0-nightly.612",
+    "@parcel/transformer-posthtml": "^2.0.0-nightly.612",
+    "@size-limit/preset-small-lib": "^4.9.2",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "husky": "^4.3.8",
+    "parcel": "^2.0.0-beta.1",
+    "react": "*",
+    "react-dom": "^17.0.1",
+    "size-limit": "^4.9.2",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@pepfar-react-lib/jest-tools": "0.1.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pepfar-datim/react-lib-network-check.git"
+  }
+}
