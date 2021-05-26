@@ -12,14 +12,14 @@ Which uses amazing `REACT Material UI Snackbar` https://material-ui.com/componen
 ## Installation
 
 ```
-npm i @dhis2-app/network-check
+npm i @pepfar-react-lib/network-check
 npm i notistack
 ```
 
 ## Usage
 ```
 import {SnackbarProvider} from 'notistack';
-import {NetworkCheck} from '@dhis2-app/network-check';
+import {NetworkCheck} from '@pepfar-react-lib/network-check';
 
 <SnackbarProvider>
     <NetworkCheck intervalMs={5000} baseUrl='https://play.dhis2.org/'/>
@@ -48,4 +48,3 @@ And build with:
 ```
 npm build
 ```
-=======
