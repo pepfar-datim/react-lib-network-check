@@ -1,7 +1,7 @@
 import { mockNetworkState, setupTestEnv } from "./lib/setupTestEnv";
 import {screen} from "@testing-library/react";
 import { NetworkState } from "../types/networkState.type";
-import {noText, pause} from "@dhis2-app/test-tools";
+import {noText, pause} from "@pepfar-react-lib/jest-tools";
 
 // beforeEach(()=>setupTestEnv());
 //

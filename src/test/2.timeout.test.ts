@@ -1,5 +1,5 @@
 import {mockNetworkState, setupTestEnv} from "./lib/setupTestEnv";
-import {/*debug, */noText, pause} from "@dhis2-app/test-tools";
+import {/*debug, */noText, pause} from "@pepfar-react-lib/jest-tools";
 import {NetworkState} from "../types/networkState.type";
 import {cleanup, screen} from "@testing-library/react";
 import {lastCheck} from "./lib/httpMock.service";
